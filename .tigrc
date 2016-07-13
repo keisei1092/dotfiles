@@ -1,0 +1,16 @@
+# commit id
+set main-view = id:width=16 date author commit-title:graph=yes,refs=yes
+
+# vertical split
+set vertical-split = no
+set split-view-height = 50%
+
+# color
+color date cyan default
+color graph-commit cyan default
+color "index "          cyan    default
+color "diff-tree "      cyan    default
+color "Merge: " white default
+color diff-stat         cyan    default
+color "+"               cyan   default
+
