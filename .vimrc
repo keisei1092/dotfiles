@@ -77,6 +77,9 @@ command! O call s:UniteOpen()
 function! s:UniteOpen()
   Unite file_rec/git
 endfunction
+" ===== Emmet
+" inoremap <buffer> <C-y><C-y> <plug>(emmet-expand-abbr)
+let g:user_emmet_expandabbr_key = '<C-y><C-y>'
 " ===== javacomplete
 autocmd FileType java :setlocal omnifunc=javacomplete#Complete
 autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
