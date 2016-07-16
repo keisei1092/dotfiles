@@ -155,6 +155,10 @@ vnoremap <Left> <ESC><C-z>
 noremap <Right> :vsplit<CR>
 inoremap <Right> <ESC>:vsplit<CR>
 vnoremap <Right> <ESC>:vsplit<CR>
+" ===== 保存とか終了とかエイリアス張る
+nnoremap ww :w<CR>
+nnoremap wq :wq<CR>
+nnoremap zz :q<CR>
 " ===== soft tab
 set tabstop=4
 set shiftwidth=4
