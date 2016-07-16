@@ -245,6 +245,11 @@ vnoremap <silent> p "0p<CR>
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 " ===== for Smarty
 autocmd BufNewFile,BufRead *.tpl set noexpandtab
+" ===== for HTML
+autocmd BufNewFile,BufRead *.html set expandtab
+autocmd BufNewFile,BufRead *.html set tabstop=2
+autocmd BufNewFile,BufRead *.html set shiftwidth=2
+autocmd BufNewFile,BufRead *.html set softtabstop=2
 " ===== for Stylus
 autocmd BufNewFile,BufRead *.styl set expandtab
 autocmd BufNewFile,BufRead *.styl set tabstop=2
