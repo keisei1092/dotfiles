@@ -142,19 +142,19 @@ set ttymouse=xterm2
 " ===== zl => zL
 noremap zl zL
 noremap zh zH
-" ===== make cursor keys disable and break a bad habit!
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-vnoremap <Up> <NOP>
-vnoremap <Down> <NOP>
-vnoremap <Left> <NOP>
-vnoremap <Right> <NOP>
+" ===== 矢印キーをもっと便利な何かにマッピングしたらいいんじゃないかな
+noremap <Up> :VimFiler<CR>
+inoremap <Up> <ESC>:VimFiler<CR>
+vnoremap <Up> <ESC>:VimFiler<CR>
+noremap <Down> :split<CR>
+inoremap <Down> <ESC>:split<CR>
+vnoremap <Down> <ESC>:split<CR>
+noremap <Left> <C-z>
+inoremap <Left> <ESC><C-z>
+vnoremap <Left> <ESC><C-z>
+noremap <Right> :vsplit<CR>
+inoremap <Right> <ESC>:vsplit<CR>
+vnoremap <Right> <ESC>:vsplit<CR>
 " ===== soft tab
 set tabstop=4
 set shiftwidth=4
