@@ -139,4 +139,4 @@ alias sl="/usr/local/bin/sl"
 ruby ~/Codes/shell-quiz/main.rb
 
 # load private config
-source ./.zshrc-private
+source ~/Codes/dotfiles/.zshrc-private
