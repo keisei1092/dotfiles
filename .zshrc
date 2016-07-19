@@ -62,6 +62,7 @@ alias bi="bundle install"
 alias be="bundle exec"
 alias pr="pry-remote"
 alias powres="powder restart"
+alias pres="powres"
 alias powlog="powder log"
 
 alias cd..="cd ../"
