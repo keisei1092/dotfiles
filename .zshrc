@@ -54,6 +54,9 @@ alias pull="git pull"
 alias k="kill -9"
 alias cl="clear"
 
+# mac commands
+alias pc="pbcopy"
+
 # vagrant
 alias vs="vagrant ssh"
 
