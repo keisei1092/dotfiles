@@ -9,6 +9,8 @@ sudo apt-get install -y git
 # zsh =====
 # http://dev.classmethod.jp/tool/zsh-prezto/
 
+sudo apt-get install -y zsh
+
 zsh
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
