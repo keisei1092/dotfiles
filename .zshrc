@@ -27,6 +27,8 @@ GREP_OPTIONS="--color=always"; export GREP_OPTIONS
 export TREE='-C'
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+
+# ===== git
 alias gb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
 alias gc="git clone"
 alias gcm="git commit -m"
@@ -49,10 +51,12 @@ alias gcom="com"
 alias gpom="git push origin master"
 alias gphm="git push heroku master"
 alias pull="git pull"
+alias gr="git reset"
 
 # unix commands
 alias k="kill -9"
 alias cl="clear"
+alias ctags="`brew --prefix`/bin/ctags"
 
 # mac commands
 alias pc="pbcopy"
@@ -61,6 +65,7 @@ alias pc="pbcopy"
 alias vs="vagrant ssh"
 
 # ruby
+alias rb="ruby"
 alias bi="bundle install"
 alias be="bundle exec"
 alias pr="pry-remote"
