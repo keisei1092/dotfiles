@@ -55,6 +55,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'yssl/QFEnter'
+NeoBundle 'Chiel92/vim-autoformat'
 call neobundle#end()
 
 " ===== unite
@@ -286,12 +287,12 @@ autocmd BufNewFile,BufRead *.coffee set shiftwidth=2
 autocmd BufNewFile,BufRead *.coffee set softtabstop=2
 
 "===========
-" Commands
+" Command Shortcuts
 "===========
-" ===== echo full path
-command F echo expand('%:p')
+command F echo expand('%:p') " echo full path
 command M MRU
 command G Ggrep
+command SP set paste
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
