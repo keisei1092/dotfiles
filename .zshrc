@@ -53,7 +53,7 @@ alias gphm="git push heroku master"
 alias pull="git pull"
 alias gr="git reset"
 
-# unix commands
+# ===== unix commands
 alias k="kill -9"
 alias cl="clear"
 alias ctags="`brew --prefix`/bin/ctags"
@@ -62,12 +62,16 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias pc="pbcopy"
 
 # vagrant
+alias vu="vagrant up"
+alias vd="vagrant destroy"
 alias vs="vagrant ssh"
 
 # ruby
 alias rb="ruby"
 alias bi="bundle install"
+alias bivb="bundle install --path='vendor/bundle"
 alias be="bundle exec"
+alias ber="bundle exec rake"
 alias pr="pry-remote"
 alias powres="powder restart"
 alias pres="powres"
