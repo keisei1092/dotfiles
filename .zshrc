@@ -69,7 +69,7 @@ alias vs="vagrant ssh"
 # ruby
 alias rb="ruby"
 alias bi="bundle install"
-alias bivb="bundle install --path='vendor/bundle"
+alias bivb="bundle install --path='vendor/bundle'"
 alias be="bundle exec"
 alias ber="bundle exec rake"
 alias pr="pry-remote"
