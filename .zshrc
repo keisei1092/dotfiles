@@ -143,13 +143,19 @@ function vp() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
-source /usr/local/opt/nvm/nvm.sh
+if [ -d "/usr/local/Bluemix" ]; then
+  source /usr/local/Bluemix/bx/zsh_autocomplete
+fi
+if [ -d "/usr/local/opt/nvm" ]; then
+  source /usr/local/opt/nvm/nvm.sh
+fi
 
 alias sl="/usr/local/bin/sl"
 
 # クイズを出す
-ruby ~/Codes/shell-quiz/main.rb
+if [ -d "~/Codes/shell-quiz" ]; then
+  ruby ~/Codes/shell-quiz/main.rb
+fi
 
 # load private config
 source ~/Codes/dotfiles/.zshrc-private
