@@ -45,8 +45,6 @@ if [ -d "/usr/local/opt/nvm" ]; then
   source /usr/local/opt/nvm/nvm.sh
 fi
 
-alias sl="/usr/local/bin/sl"
-
 # クイズを出す
 if [ -d "~/Codes/shell-quiz" ]; then
   ruby ~/Codes/shell-quiz/main.rb
