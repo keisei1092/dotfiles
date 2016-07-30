@@ -28,117 +28,12 @@ export TREE='-C'
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
-# ===== git
-alias gb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
-alias gc="git clone"
-alias gcm="git commit -m"
-alias gdb="git branch -D"
-alias gbd="git branch -D"
-alias delete="git branch -D"
-alias ch="git checkout"
-alias co="git checkout"
-alias chpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
-alias copeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
-alias checkout="git checkout"
-alias checkoutpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
-alias push="git push origin"
-alias gg="git grep"
-alias gs="git status"
-alias com="git checkout master"
-alias chm="com"
-alias master="com"
-alias gcom="com"
-alias gpom="git push origin master"
-alias gphm="git push heroku master"
-alias pull="git pull"
-alias gr="git reset"
+source ~/Codes/dotfiles/partial_zsh/.aliases
+source ~/Codes/dotfiles/partial_zsh/.peco-select-history
 
-# ===== unix commands
-alias k="kill -9"
-alias cl="clear"
-alias ctags="`brew --prefix`/bin/ctags"
-
-# mac commands
-alias pc="pbcopy"
-
-# vagrant
-alias vu="vagrant up"
-alias vd="vagrant destroy"
-alias vs="vagrant ssh"
-
-# ruby
-alias rb="ruby"
-alias bi="bundle install"
-alias bivb="bundle install --path='vendor/bundle'"
-alias be="bundle exec"
-alias ber="bundle exec rake"
-alias pr="pry-remote"
-alias powres="powder restart"
-alias pres="powres"
-alias powlog="powder log"
-
-alias cd..="cd ../"
-alias c="cd"
-alias c.="cd ../"
-alias c..="cd ../../"
-alias psa="psaux"
-alias psaux="ps aux | grep"
-alias k="kill -9"
-alias myip="ifconfig | grep 192"
-alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
-alias z="v ~/.zshrc"
-alias zr="v ~/.zshrc"
-alias vr="v ~/.vimrc"
-alias v="vim"
-alias mvim="open -a MacVim"
-alias l="ls"
-alias lsa="ls -a"
-alias lsla="ls -la"
-alias s="szsh"
-alias szsh="source ~/.zshrc && exec -l $SHELL"
 eval "$(rbenv init -)"
 function chpwd() {
   ls
-}
-function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-
-    BUFFER=$(\history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-# git checkout peco
-function gcopeco() {
-    git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`
-}
-
-# gitpeco
-function gp() {
-    echo `git ls-files | peco`
-}
-
-# gitbranchpeco
-function gitbranchp() {
-    echo `git branch | peco`
-}
-
-# vimgitpeco
-function vg() {
-    vim `git ls-files | peco`
-}
-alias vv='vg'
-
-# vimpeco
-function vp() {
-    vim `find . -name "*" | peco`
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
