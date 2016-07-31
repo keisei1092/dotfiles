@@ -289,7 +289,7 @@ autocmd BufNewFile,BufRead *.coffee set softtabstop=2
 "===========
 " Command Shortcuts
 "===========
-command F echo expand('%:p') " echo full path
+command F echo expand('%:p')
 command M MRU
 command G Ggrep
 command SP set paste
@@ -304,3 +304,5 @@ function! s:GetBufByte()
         return byte - 1
     endif
 endfunction
+
+source /Users/keisei/Codes/dotfiles/.vimrc-private
