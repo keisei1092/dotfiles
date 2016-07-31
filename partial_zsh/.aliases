@@ -28,9 +28,16 @@ alias k="kill -9"
 alias cl="clear"
 alias ctags="`brew --prefix`/bin/ctags"
 alias sl="/usr/local/bin/sl"
+alias gr="grep"
+alias grv="grep -v"
 
 # mac commands
-alias pc="pbcopy"
+case ${OSTYPE} in
+    darwin*)
+        alias pc="pbcopy"
+        alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
+        ;;
+esac
 
 # vagrant
 alias vu="vagrant up"
