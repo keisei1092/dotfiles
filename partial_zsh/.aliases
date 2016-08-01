@@ -32,6 +32,7 @@ alias gr="grep"
 alias grv="grep -v"
 alias ee="exit"
 alias df="cd ~/Codes/dotfiles"
+alias pw="pwd"
 
 # mac commands
 case ${OSTYPE} in
