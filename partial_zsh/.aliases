@@ -31,6 +31,7 @@ alias sl="/usr/local/bin/sl"
 alias gr="grep"
 alias grv="grep -v"
 alias ee="exit"
+alias df="cd ~/Codes/dotfiles"
 
 # mac commands
 case ${OSTYPE} in
