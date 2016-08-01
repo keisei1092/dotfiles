@@ -60,4 +60,4 @@ begin
 
 
 
-  AwesomePrint.defaults={:theme=>:solorized}
+  # AwesomePrint.defaults={:theme=>:solorized}
