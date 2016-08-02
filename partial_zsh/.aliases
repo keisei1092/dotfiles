@@ -66,8 +66,16 @@ alias psa="psaux"
 alias psaux="ps aux | grep"
 alias k="kill -9"
 alias myip="ifconfig | grep 192"
-alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+if [ "$(uname)" == 'Darwin' ]; then
+	alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+	alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then                                                                                           
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+fi
 alias z="v ~/.zshrc"
 alias zr="v ~/.zshrc"
 alias vr="v ~/.vimrc"
