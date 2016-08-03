@@ -6,7 +6,8 @@ for file in ${DOT_FILES[@]}
 do
   if [ -f "$HOME/$file" ]
   then
-    mv $HOME/$file $HOME/$file_`date +%Y%m%d`
+    cp $HOME/$file $HOME/$file+"_old"
+    rm $HOME/$file
     ln -s $HOME/Codes/dotfiles/$file $HOME/$file
   else
     ln -s $HOME/Codes/dotfiles/$file $HOME/$file
