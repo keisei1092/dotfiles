@@ -290,6 +290,7 @@ autocmd BufNewFile,BufRead *.coffee set softtabstop=2
 " Command Shortcuts
 "===========
 command F echo expand('%:p')
+command E VimFiler
 command M MRU
 command G Ggrep
 command SP set paste
