@@ -14,6 +14,7 @@ alias checkoutpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{
 alias push="git push origin"
 alias gg="git grep"
 alias gs="git status"
+alias stash="git stash"
 alias com="git checkout master"
 alias chm="com"
 alias master="com"
