@@ -306,4 +306,4 @@ function! s:GetBufByte()
     endif
 endfunction
 
-source /Users/keisei/Codes/dotfiles/.vimrc-private
+source ~/Codes/dotfiles/.vimrc-private
