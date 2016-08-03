@@ -26,7 +26,6 @@ alias gr="git reset"
 # ===== unix commands
 alias k="kill -9"
 alias cl="clear"
-alias ctags="`brew --prefix`/bin/ctags"
 alias sl="/usr/local/bin/sl"
 alias gr="grep"
 alias grv="grep -v"
@@ -36,10 +35,13 @@ alias pw="pwd"
 
 # mac commands
 case ${OSTYPE} in
-    darwin*)
-        alias pc="pbcopy"
-        alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
-        ;;
+  darwin*)
+    alias pc="pbcopy"
+    alias ctags="`brew --prefix`/bin/ctags"
+    alias mvim="open -a MacVim"
+    alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+    alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+    ;;
 esac
 
 # vagrant
@@ -66,21 +68,10 @@ alias psa="psaux"
 alias psaux="ps aux | grep"
 alias k="kill -9"
 alias myip="ifconfig | grep 192"
-if [ "$(uname)" == 'Darwin' ]; then
-	alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-	alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  OS='Linux'
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then                                                                                           
-  OS='Cygwin'
-else
-  echo "Your platform ($(uname -a)) is not supported."
-fi
 alias z="v ~/.zshrc"
 alias zr="v ~/.zshrc"
 alias vr="v ~/.vimrc"
 alias v="vim"
-alias mvim="open -a MacVim"
 alias l="ls"
 alias lsa="ls -a"
 alias lsla="ls -la"
