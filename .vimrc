@@ -56,6 +56,7 @@ NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'yssl/QFEnter'
 NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'szw/vim-tags'
 call neobundle#end()
 
 " ===== unite
@@ -104,6 +105,15 @@ let g:Powerline_symbols = 'compatible'
 " ===== vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
+" ===== vim-tags
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    let g:vim_tags_project_tags_command = "/usr/local/Cellar/ctags/5.8_1/bin/ctags -f tags -R . 2>/dev/null"
+    let g:vim_tags_gems_tags_command = "/usr/local/Cellar/ctags/5.8_1/bin/ctags -R -f Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
+    set tags+=tags,Gemfile.lock.tags
+  endif
+endif
 
 filetype plugin indent on
 
@@ -160,6 +170,7 @@ noremap <Right> :vsplit<CR>
 inoremap <Right> <ESC>:vsplit<CR>
 vnoremap <Right> <ESC>:vsplit<CR>
 " ===== 保存とか終了とかエイリアス張る
+nnoremap zq :q!<CR>
 nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
 " ===== soft tab
@@ -285,6 +296,11 @@ autocmd BufNewFile,BufRead *.coffee set expandtab
 autocmd BufNewFile,BufRead *.coffee set tabstop=2
 autocmd BufNewFile,BufRead *.coffee set shiftwidth=2
 autocmd BufNewFile,BufRead *.coffee set softtabstop=2
+" ===== for .vimrc
+autocmd BufNewFile,BufRead .vimrc set expandtab
+autocmd BufNewFile,BufRead .vimrc set tabstop=2
+autocmd BufNewFile,BufRead .vimrc set shiftwidth=2
+autocmd BufNewFile,BufRead .vimrc set softtabstop=2
 
 "===========
 " Command Shortcuts
