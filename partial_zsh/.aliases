@@ -44,6 +44,7 @@ alias c="cd"
 alias c.="cd ../"
 alias c..="cd ../../"
 alias myip="ifconfig | grep 192"
+alias v="vim"
 
 # mac commands
 case ${OSTYPE} in
@@ -72,9 +73,15 @@ alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
 
+# npm
+alias ni="npm install"
+alias ns="npm start"
+alias nins="npm install && npm start"
+
+# dotfiles
 alias z="v ~/.zshrc"
 alias zr="v ~/.zshrc"
 alias vr="v ~/.vimrc"
-alias v="vim"
 alias s="szsh"
 alias szsh="source ~/.zshrc && exec -l $SHELL"
+
