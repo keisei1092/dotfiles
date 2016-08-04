@@ -1,5 +1,5 @@
 # ===== git
-alias gb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
+alias gb="git for-each-ref --sort=-committerdate --format='%(authordate): %(refname:short)' refs/heads/"
 alias gc="git clone"
 alias gcm="git commit -m"
 alias gdb="git branch -D"
