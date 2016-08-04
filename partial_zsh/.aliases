@@ -33,12 +33,26 @@ alias grv="grep -v"
 alias ee="exit"
 alias df="cd ~/Codes/dotfiles"
 alias pw="pwd"
+alias l="ls"
+alias lsa="ls -a"
+alias lsla="ls -la"
+alias psa="psaux"
+alias psaux="ps aux | grep"
+alias k="kill -9"
+alias cd..="cd ../"
+alias c="cd"
+alias c.="cd ../"
+alias c..="cd ../../"
+alias myip="ifconfig | grep 192"
 
 # mac commands
 case ${OSTYPE} in
     darwin*)
         alias pc="pbcopy"
         alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
+        alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+        alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+        alias mvim="open -a MacVim"
         ;;
 esac
 
@@ -58,23 +72,9 @@ alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
 
-alias cd..="cd ../"
-alias c="cd"
-alias c.="cd ../"
-alias c..="cd ../../"
-alias psa="psaux"
-alias psaux="ps aux | grep"
-alias k="kill -9"
-alias myip="ifconfig | grep 192"
-alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
 alias z="v ~/.zshrc"
 alias zr="v ~/.zshrc"
 alias vr="v ~/.vimrc"
 alias v="vim"
-alias mvim="open -a MacVim"
-alias l="ls"
-alias lsa="ls -a"
-alias lsla="ls -la"
 alias s="szsh"
 alias szsh="source ~/.zshrc && exec -l $SHELL"
