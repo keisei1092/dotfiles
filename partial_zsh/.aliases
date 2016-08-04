@@ -1,5 +1,5 @@
 # ===== git
-alias gb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
+alias gb="git for-each-ref --sort=-committerdate --format='%(authordate): %(refname:short)' refs/heads/"
 alias gc="git clone"
 alias gcm="git commit -m"
 alias gdb="git branch -D"
@@ -16,9 +16,9 @@ alias gg="git grep"
 alias gs="git status"
 alias stash="git stash"
 alias com="git checkout master"
-alias chm="com"
-alias master="com"
-alias gcom="com"
+alias chm="git checkout master"
+alias master="git checkout master"
+alias gcom="git checkout master"
 alias gpom="git push origin master"
 alias gphm="git push heroku master"
 alias pull="git pull"
@@ -34,12 +34,27 @@ alias grv="grep -v"
 alias ee="exit"
 alias df="cd ~/Codes/dotfiles"
 alias pw="pwd"
+alias l="ls"
+alias lsa="ls -a"
+alias lsla="ls -la"
+alias psa="psaux"
+alias psaux="ps aux | grep"
+alias k="kill -9"
+alias cd..="cd ../"
+alias c="cd"
+alias c.="cd ../"
+alias c..="cd ../../"
+alias myip="ifconfig | grep 192"
+alias v="vim"
 
 # mac commands
 case ${OSTYPE} in
     darwin*)
         alias pc="pbcopy"
         alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
+        alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+        alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+        alias mvim="open -a MacVim"
         ;;
 esac
 
@@ -59,23 +74,15 @@ alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
 
-alias cd..="cd ../"
-alias c="cd"
-alias c.="cd ../"
-alias c..="cd ../../"
-alias psa="psaux"
-alias psaux="ps aux | grep"
-alias k="kill -9"
-alias myip="ifconfig | grep 192"
-alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
-alias z="v ~/.zshrc"
-alias zr="v ~/.zshrc"
-alias vr="v ~/.vimrc"
-alias v="vim"
-alias mvim="open -a MacVim"
-alias l="ls"
-alias lsa="ls -a"
-alias lsla="ls -la"
-alias s="szsh"
+# npm
+alias ni="npm install"
+alias ns="npm start"
+alias nins="npm install && npm start"
+
+# dotfiles
+alias z="vim ~/.zshrc"
+alias zr="vim ~/.zshrc"
+alias vr="vim ~/.vimrc"
 alias szsh="source ~/.zshrc && exec -l $SHELL"
+alias s="source ~/.zshrc && exec -l $SHELL"
+
