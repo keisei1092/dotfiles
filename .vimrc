@@ -301,6 +301,11 @@ autocmd BufNewFile,BufRead .vimrc set expandtab
 autocmd BufNewFile,BufRead .vimrc set tabstop=2
 autocmd BufNewFile,BufRead .vimrc set shiftwidth=2
 autocmd BufNewFile,BufRead .vimrc set softtabstop=2
+" ===== for .gitconfig
+autocmd BufNewFile,BufRead .gitconfig set noexpandtab
+autocmd BufNewFile,BufRead .gitconfig set tabstop=4
+autocmd BufNewFile,BufRead .gitconfig set shiftwidth=4
+autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 
 "===========
 " Command Shortcuts
