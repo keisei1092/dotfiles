@@ -305,6 +305,7 @@ autocmd BufNewFile,BufRead .vimrc set softtabstop=2
 "===========
 " Command Shortcuts
 "===========
+command E VimFiler
 command F echo expand('%:p')
 command M MRU
 command G Ggrep
