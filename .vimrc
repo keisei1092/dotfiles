@@ -171,6 +171,7 @@ inoremap <Right> <ESC>:vsplit<CR>
 vnoremap <Right> <ESC>:vsplit<CR>
 " ===== 保存とか終了とかエイリアス張る
 nnoremap zq :q!<CR>
+nnoremap zp :q!<CR> " だいぶゴリ押しだがホームポジションが崩れないので設定してみる
 nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
 " ===== soft tab
