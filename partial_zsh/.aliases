@@ -48,6 +48,7 @@ alias c.="cd ../"
 alias c..="cd ../../"
 alias myip="ifconfig | grep 192"
 alias v="vim"
+alias v.="vim ."
 
 # mac commands
 case ${OSTYPE} in
