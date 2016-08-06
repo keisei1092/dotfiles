@@ -1,8 +1,8 @@
- #!/bin/bash
+#!/bin/bash
 
-  DOT_FILES=(.zshrc .powconfig .gitconfig .tmux.conf .tigrc .vimrc .pryrc)
+DOT_FILES=(.zshrc .powconfig .gitconfig .tmux.conf .tigrc .vimrc .pryrc)
 
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/Codes/dotfiles/$file $HOME/$file
- done
+for file in ${DOT_FILES[@]}
+do
+  ln -s $HOME/Codes/dotfiles/$file $HOME/$file
+done
