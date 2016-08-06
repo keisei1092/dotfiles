@@ -25,6 +25,7 @@ alias gpom="git push origin master"
 alias gphm="git push heroku master"
 alias pull="git pull"
 alias gr="git reset"
+alias t="tig"
 
 # ===== unix commands
 alias k="kill -9"
