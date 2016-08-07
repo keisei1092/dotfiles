@@ -360,6 +360,7 @@ command F echo expand('%:p')
 command M MRU
 command G Ggrep
 command SP set paste
+command SW set wrap
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
