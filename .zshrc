@@ -57,5 +57,10 @@ source ~/Codes/dotfiles/.zshrc-private
 
 # zsh-syntax-highlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# ConoHa 環境変数
+if [ -f ~/.env ]; then
+  source ~/.env
 fi
