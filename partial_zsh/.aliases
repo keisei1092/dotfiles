@@ -30,7 +30,6 @@ alias t="tig"
 # ===== unix commands
 alias k="kill -9"
 alias cl="clear"
-alias ctags="`brew --prefix`/bin/ctags"
 alias sl="/usr/local/bin/sl"
 alias gr="grep"
 alias grv="grep -v"
@@ -56,7 +55,7 @@ alias p="pwd"
 case ${OSTYPE} in
     darwin*)
         alias pc="pbcopy"
-        alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
+        alias ctags="`brew --prefix`/bin/ctags"
         alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
         alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
         alias mvim="open -a MacVim"
