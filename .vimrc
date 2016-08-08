@@ -57,6 +57,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'yssl/QFEnter'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'maksimr/vim-jsbeautify'
 call neobundle#end()
 
 " ===== unite
