@@ -59,3 +59,9 @@ source ~/Codes/dotfiles/.zshrc-private
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# ===== find and delete
+function findrm() {
+  find . -maxdepth 1 -name $1 | xargs rm
+}
+
