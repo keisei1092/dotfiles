@@ -132,6 +132,12 @@ if has("unix")
   endif
 endif
 
+" ===== vim-rspec
+let s:bundle = neobundle#get('vim-rspec')
+function! s:bundle.hooks.on_source(bundle)
+   let g:rspec_command = 'Dispatch rspec {spec}'
+endfunction
+
 filetype plugin indent on
 
 NeoBundleCheck
