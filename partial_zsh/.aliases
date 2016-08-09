@@ -40,6 +40,7 @@ alias pw="pwd"
 alias l="ls"
 alias lsa="ls -a"
 alias lsla="ls -la"
+alias lsltr="ls -ltr"
 alias psa="psaux"
 alias psaux="ps aux | grep"
 alias k="kill -9"
@@ -54,13 +55,13 @@ alias p="pwd"
 
 # mac commands
 case ${OSTYPE} in
-    darwin*)
-        alias pc="pbcopy"
-        alias ctags="`brew --prefix`/bin/ctags"
-        alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-        alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
-        alias mvim="open -a MacVim"
-        ;;
+  darwin*)
+    alias pc="pbcopy"
+    alias ctags="`brew --prefix`/bin/ctags"
+    alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+    alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+    alias mvim="open -a MacVim"
+    ;;
 esac
 
 # vagrant
