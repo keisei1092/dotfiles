@@ -369,6 +369,7 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 "===========
 command E VimFiler
 command F echo expand('%:p')
+nnoremap <silent> <C-n><C-f> :echo expand('%:p')<CR>
 command M MRU
 nnoremap <silent> <C-n><C-m> :MRU<CR>
 command SP set paste
