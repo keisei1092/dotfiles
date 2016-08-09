@@ -368,7 +368,7 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 " Command Shortcuts
 "===========
 command E VimFiler
-nnoremap <silent> <C-n><C-e> :Vimfiler<CR>
+nnoremap <silent> <C-n><C-e> :VimFiler<CR>
 command F echo expand('%:p')
 nnoremap <silent> <C-n><C-f> :echo expand('%:p')<CR>
 command M MRU
