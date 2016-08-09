@@ -13,3 +13,6 @@ do
     ln -s $HOME/Codes/dotfiles/$file $HOME/$file
   fi
 done
+
+source ~/.zshrc
+exec -l $SHELL
