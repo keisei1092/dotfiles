@@ -15,5 +15,5 @@ Linux
 
 ```sh
 cd
-find . -name '*_old' -maxdepth 1
+find . -name '*_old' -delete -maxdepth 1
 ```
