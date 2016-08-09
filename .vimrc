@@ -359,7 +359,6 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 command E VimFiler
 command F echo expand('%:p')
 command M MRU
-command G Ggrep
 command SP set paste
 command SW set wrap
 
