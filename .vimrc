@@ -376,6 +376,7 @@ nnoremap <silent> <C-n><C-m> :MRU<CR>
 command SP set paste
 command SW set wrap
 command HB call HtmlBeautify()
+nnoremap <silent> <C-n><C-o><C-h> :noh<CR>
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
