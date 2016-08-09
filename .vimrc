@@ -370,6 +370,7 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 command E VimFiler
 command F echo expand('%:p')
 command M MRU
+nnoremap <silent> <C-n><C-m> :MRU<CR>
 command SP set paste
 command SW set wrap
 command HB call HtmlBeautify()
