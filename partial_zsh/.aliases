@@ -53,7 +53,7 @@ alias v="vim"
 alias v.="vim ."
 alias p="pwd"
 
-# mac commands
+# ===== mac commands
 case ${OSTYPE} in
   darwin*)
     alias pc="pbcopy"
@@ -64,12 +64,12 @@ case ${OSTYPE} in
     ;;
 esac
 
-# vagrant
+# ===== vagrant
 alias vu="vagrant up"
 alias vd="vagrant destroy"
 alias vs="vagrant ssh"
 
-# ruby
+# ===== ruby
 alias rb="ruby"
 alias bi="bundle install"
 alias bivb="bundle install --path='vendor/bundle'"
@@ -80,12 +80,12 @@ alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
 
-# npm
+# ===== npm
 alias ni="npm install"
 alias ns="npm start"
 alias nins="npm install && npm start"
 
-# dotfiles
+# ===== dotfiles
 alias z="vim ~/.zshrc"
 alias zr="vim ~/.zshrc"
 alias vr="vim ~/.vimrc"

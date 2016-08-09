@@ -1,11 +1,4 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
+# ===== Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -13,7 +6,7 @@ fi
 # PROMPT="%f%F{cyan}[%n@%m %d]%f
 # ¶(⁄•˅̮•∖)⁋ ❯ "
 
-# Customize to your needs...
+# ===== Customize to your needs...
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 PATH=$PATH:~/local/bin
@@ -39,7 +32,7 @@ function chpwd() {
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-### Added by the Bluemix CLI
+# ===== Added by the Bluemix CLI
 if [ -d "/usr/local/Bluemix" ]; then
   source /usr/local/Bluemix/bx/zsh_autocomplete
 fi
@@ -47,15 +40,21 @@ if [ -d "/usr/local/opt/nvm" ]; then
   source /usr/local/opt/nvm/nvm.sh
 fi
 
-# クイズを出す
+# ===== クイズを出す
 if [ -d "~/Codes/shell-quiz" ]; then
   ruby ~/Codes/shell-quiz/main.rb
 fi
 
-# load private config
+# ===== load private config
 source ~/Codes/dotfiles/.zshrc-private
 
-# zsh-syntax-highlighting
+# ===== zsh-syntax-highlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# ===== find and delete
+function findrm() {
+  find . -maxdepth 1 -name $1 | xargs rm
+}
+
