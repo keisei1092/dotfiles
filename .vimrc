@@ -57,6 +57,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'yssl/QFEnter'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'maksimr/vim-jsbeautify'
 call neobundle#end()
 
 " ===== unite
@@ -74,17 +75,24 @@ nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
 " 最近使ったファイルの一覧とバッファを表示
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+
 " ===== add unite command
 command! O call s:UniteOpen()
 function! s:UniteOpen()
   Unite file_rec/git
 endfunction
+
 " ===== Emmet
-" inoremap <buffer> <C-y><C-y> <plug>(emmet-expand-abbr)
 let g:user_emmet_expandabbr_key = '<C-y><C-y>'
+function NoticeEmmetShortcutKey()
+  echo 'Emmet invocation key was remapped to <C-y><C-y>'
+endfunction
+inoremap <C-y>, :NoticeEmmetShortcutKey
+
 " ===== javacomplete
 autocmd FileType java :setlocal omnifunc=javacomplete#Complete
 autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
+
 " ===== neosnippet
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -100,11 +108,15 @@ if has('conceal') " For conceal markers.
   set conceallevel=2 concealcursor=niv
 endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
+
 " ===== powerline
 let g:Powerline_symbols = 'compatible'
+
 " ===== vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
+nnoremap <C-e> :VimFiler<CR>
+
 " ===== vim-tags
 if has("unix")
   let s:uname = system("uname -s")
@@ -131,31 +143,42 @@ set showcmd
 set list
 set nowrap
 set whichwrap=b,s,<,>,[,]
+
 " ===== make visible end of line
 set listchars=tab:>\ ,trail:･,extends:<
+
 " ===== determine the min num of screen lines
 set scrolloff=4
 set sidescrolloff=8
+
 " ===== cleverer auto indentation
 set cindent
+
 " ===== keep indent depending prev line
 set autoindent
+
 " ===== auto adjust indentation from state of prev line
 set smartindent
+
 " ===== enable to move from eol or bol to next line
 set backspace=indent,eol,start
 set timeoutlen=1000
 set ttimeoutlen=0
+
 " ===== enable to copy to system clipboard
 set clipboard=unnamed,autoselect
+
 " back to nopaste by leaving insert mode
 autocmd InsertLeave * set nopaste
+
 " ===== mouse
 set mouse=a
 set ttymouse=xterm2
+
 " ===== zl => zL
 noremap zl zL
 noremap zh zH
+
 " ===== 矢印キーをもっと便利な何かにマッピングしたらいいんじゃないかな
 noremap <Up> :VimFiler<CR>
 inoremap <Up> <ESC>:VimFiler<CR>
@@ -169,38 +192,47 @@ vnoremap <Left> <ESC><C-z>
 noremap <Right> :vsplit<CR>
 inoremap <Right> <ESC>:vsplit<CR>
 vnoremap <Right> <ESC>:vsplit<CR>
+
 " ===== 保存とか終了とかエイリアス張る
 nnoremap zq :q!<CR>
+nnoremap zp :q!<CR> " だいぶゴリ押しだがホームポジションが崩れないので設定してみる
 nnoremap ww :w<CR>
 nnoremap wq :wq<CR>
+
 " ===== soft tab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
+
 " ===== backup
 set noswapfile " stop generating .swp file
 set hidden " enable to open other file when buffer contains file isn't saved
 set autoread " check automatically if the file has changed externally
+
 " ===== search
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase " if a pattern contains an uppercase the search will be case sensitive
+
 " ===== パターン検索のエスケープを必要なくする
 nnoremap / /\v
+
 " ===== auto complete
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
   exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
 endfor
+
 " ===== quickfix
 nnoremap <silent> [co :copen<CR>
 nnoremap <silent> [cp :cprev<CR>
 nnoremap <silent> [cn :cnext<CR>
 nnoremap <silent> [cf :cfirst<CR>
 nnoremap <silent> [cl :clast<CR>
+
 " ===== tabs
 nnoremap <silent> <C-n><C-n>  :<C-u>tabnew<CR>
 nnoremap <silent> <C-n><C-c>  :<C-u>tabclose<CR>
@@ -226,6 +258,7 @@ set cursorline
 set background=dark
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue
 match ZenkakuSpace /　/
+
 " ===== tmux title
 if $TMUX != ""
   augroup titlesettings
@@ -236,6 +269,7 @@ if $TMUX != ""
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
   augroup END
 endif
+
 " ===== AutoComplete parentheses, braces
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
@@ -252,64 +286,83 @@ vnoremap <silent> p "0p<CR>
 " ======
 " indent
 " ======
+"
 " ===== md as markdown, instead of modula2
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+
 " ===== for Smarty
 autocmd BufNewFile,BufRead *.tpl set noexpandtab
+
 " ===== for HTML
 autocmd BufNewFile,BufRead *.html set expandtab
 autocmd BufNewFile,BufRead *.html set tabstop=2
 autocmd BufNewFile,BufRead *.html set shiftwidth=2
 autocmd BufNewFile,BufRead *.html set softtabstop=2
+
 " ===== for Stylus
 autocmd BufNewFile,BufRead *.styl set expandtab
 autocmd BufNewFile,BufRead *.styl set tabstop=2
 autocmd BufNewFile,BufRead *.styl set shiftwidth=2
 autocmd BufNewFile,BufRead *.styl set softtabstop=2
+
 " ===== for Ruby
 autocmd BufNewFile,BufRead *.rb set expandtab
 autocmd BufNewFile,BufRead *.rb set tabstop=2
 autocmd BufNewFile,BufRead *.rb set shiftwidth=2
 autocmd BufNewFile,BufRead *.rb set softtabstop=2
+
 " ===== for ERuby
 autocmd BufNewFile,BufRead *.erb set expandtab
 autocmd BufNewFile,BufRead *.erb set tabstop=2
 autocmd BufNewFile,BufRead *.erb set shiftwidth=2
 autocmd BufNewFile,BufRead *.erb set softtabstop=2
+
 " ===== for JSON
 autocmd BufNewFile,BufRead *.json set expandtab
 autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
 autocmd BufNewFile,BufRead *.json set softtabstop=2
+
 " ===== for JavaScript
 autocmd BufNewFile,BufRead *.js set expandtab
 autocmd BufNewFile,BufRead *.js set tabstop=2
 autocmd BufNewFile,BufRead *.js set shiftwidth=2
 autocmd BufNewFile,BufRead *.js set softtabstop=2
+
 " ===== for Yaml
 autocmd BufNewFile,BufRead *.yml set expandtab
 autocmd BufNewFile,BufRead *.yml set tabstop=2
 autocmd BufNewFile,BufRead *.yml set shiftwidth=2
 autocmd BufNewFile,BufRead *.yml set softtabstop=2
+
 " ===== for CoffeeScript
 autocmd BufNewFile,BufRead *.coffee set expandtab
 autocmd BufNewFile,BufRead *.coffee set tabstop=2
 autocmd BufNewFile,BufRead *.coffee set shiftwidth=2
 autocmd BufNewFile,BufRead *.coffee set softtabstop=2
+
 " ===== for .vimrc
 autocmd BufNewFile,BufRead .vimrc set expandtab
 autocmd BufNewFile,BufRead .vimrc set tabstop=2
 autocmd BufNewFile,BufRead .vimrc set shiftwidth=2
 autocmd BufNewFile,BufRead .vimrc set softtabstop=2
 
+" ===== for .gitconfig
+autocmd BufNewFile,BufRead .gitconfig set noexpandtab
+autocmd BufNewFile,BufRead .gitconfig set tabstop=4
+autocmd BufNewFile,BufRead .gitconfig set shiftwidth=4
+autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
+
 "===========
 " Command Shortcuts
 "===========
+command E VimFiler
 command F echo expand('%:p')
 command E VimFiler
 command M MRU
 command G Ggrep
 command SP set paste
+command SW set wrap
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif

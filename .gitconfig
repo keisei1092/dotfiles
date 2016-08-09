@@ -1,0 +1,31 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = kp
+#	email = keisei@cps.im.dendai.ac.jp
+[core]
+	editor = vim
+	excludesfile = /Users/keisei/.gitignore_global
+	excludesfile = /Users/keisei/.gitignore
+[user]
+	name = keisei_1092
+	email = keisei_1092@yahoo.co.jp
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[color "status"]
+	added = green # yellow
+	changed = yellow # green
+	untracked = red
+[color "diff"]
+	# meta = white bold
+	frag = cyan
+	old = magenta
+	new = yellow

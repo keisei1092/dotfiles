@@ -1,5 +1,5 @@
 # ===== git
-alias gb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
+alias gb="git for-each-ref --sort=-committerdate --format='%(authordate): %(refname:short)' refs/heads/"
 alias gc="git clone"
 alias gcm="git commit -m"
 alias gdb="git branch -D"
@@ -12,16 +12,20 @@ alias copeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print 
 alias checkout="git checkout"
 alias checkoutpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
 alias push="git push origin"
+alias pushm="git push origin master"
+alias gd="git diff"
 alias gg="git grep"
 alias gs="git status"
+alias stash="git stash"
 alias com="git checkout master"
-alias chm="com"
-alias master="com"
-alias gcom="com"
+alias chm="git checkout master"
+alias master="git checkout master"
+alias gcom="git checkout master"
 alias gpom="git push origin master"
 alias gphm="git push heroku master"
 alias pull="git pull"
 alias gr="git reset"
+alias t="tig"
 
 # ===== unix commands
 alias k="kill -9"
@@ -32,15 +36,30 @@ alias grv="grep -v"
 alias ee="exit"
 alias df="cd ~/Codes/dotfiles"
 alias pw="pwd"
+alias l="ls"
+alias lsa="ls -a"
+alias lsla="ls -la"
+alias lsltr="ls -ltr"
+alias psa="psaux"
+alias psaux="ps aux | grep"
+alias k="kill -9"
+alias cd..="cd ../"
+alias c="cd"
+alias c.="cd ../"
+alias c..="cd ../../"
+alias myip="ifconfig | grep 192"
+alias v="vim"
+alias v.="vim ."
+alias p="pwd"
 
 # mac commands
 case ${OSTYPE} in
   darwin*)
     alias pc="pbcopy"
     alias ctags="`brew --prefix`/bin/ctags"
-    alias mvim="open -a MacVim"
     alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
     alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+    alias mvim="open -a MacVim"
     ;;
 esac
 
@@ -60,20 +79,15 @@ alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
 
-alias cd..="cd ../"
-alias c="cd"
-alias c.="cd ../"
-alias c..="cd ../../"
-alias psa="psaux"
-alias psaux="ps aux | grep"
-alias k="kill -9"
-alias myip="ifconfig | grep 192"
-alias z="v ~/.zshrc"
-alias zr="v ~/.zshrc"
-alias vr="v ~/.vimrc"
-alias v="vim"
-alias l="ls"
-alias lsa="ls -a"
-alias lsla="ls -la"
-alias s="szsh"
+# npm
+alias ni="npm install"
+alias ns="npm start"
+alias nins="npm install && npm start"
+
+# dotfiles
+alias z="vim ~/.zshrc"
+alias zr="vim ~/.zshrc"
+alias vr="vim ~/.vimrc"
 alias szsh="source ~/.zshrc && exec -l $SHELL"
+alias s="source ~/.zshrc && exec -l $SHELL"
+
