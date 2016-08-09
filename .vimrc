@@ -59,10 +59,8 @@ NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-dispatch'
-NeoBundleLazy 'thoughtbot/vim-rspec', {
-                \ 'depends'   : 'tpope/vim-dispatch',
-                \ 'autoload'  : { 'filetypes' : ['ruby'] }
-                \ }
+NeoBundle 'thoughtbot/vim-rspec'
+
 call neobundle#end()
 
 " ===== unite
@@ -133,10 +131,12 @@ if has("unix")
 endif
 
 " ===== vim-rspec
-let s:bundle = neobundle#get('vim-rspec')
-function! s:bundle.hooks.on_source(bundle)
-   let g:rspec_command = 'Dispatch rspec {spec}'
-endfunction
+let g:rspec_command = 'Dispatch rspec {spec}'
+" RSpec.vim mappings
+map ,rt :call RunCurrentSpecFile()<CR>
+map ,rs :call RunNearestSpec()<CR>
+map ,rl :call RunLastSpec()<CR>
+map ,ra :call RunAllSpecs()<CR>
 
 filetype plugin indent on
 
@@ -372,6 +372,7 @@ command F echo expand('%:p')
 command M MRU
 command SP set paste
 command SW set wrap
+command HB call HtmlBeautify()
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
