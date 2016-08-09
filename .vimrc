@@ -58,6 +58,10 @@ NeoBundle 'yssl/QFEnter'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundleLazy 'thoughtbot/vim-rspec', {
+                \ 'depends'   : 'tpope/vim-dispatch',
+                \ 'autoload'  : { 'filetypes' : ['ruby'] }
 call neobundle#end()
 
 " ===== unite
