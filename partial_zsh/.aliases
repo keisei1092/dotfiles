@@ -55,6 +55,7 @@ alias myip="ifconfig | grep 192"
 alias v="vim"
 alias v.="vim ."
 alias p="pwd"
+alias q="pwd"
 
 # ===== mac commands
 case ${OSTYPE} in
