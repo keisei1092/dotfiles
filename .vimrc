@@ -60,6 +60,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'pangloss/vim-javascript'
 
 call neobundle#end()
 
