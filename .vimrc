@@ -131,7 +131,7 @@ if has("unix")
 endif
 
 " ===== vim-rspec
-let g:rspec_command = 'Dispatch rspec {spec}'
+let g:rspec_command = 'Dispatch bundle exec spring rspec {spec}'
 " RSpec.vim mappings
 map ,rt :call RunCurrentSpecFile()<CR>
 map ,rs :call RunNearestSpec()<CR>
