@@ -82,6 +82,7 @@ alias pr="pry-remote"
 alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
+alias routes="bundle exec rake routes"
 
 # ===== npm
 alias ni="npm install"
