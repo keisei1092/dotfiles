@@ -310,6 +310,12 @@ autocmd BufNewFile,BufRead *.html set tabstop=2
 autocmd BufNewFile,BufRead *.html set shiftwidth=2
 autocmd BufNewFile,BufRead *.html set softtabstop=2
 
+" ===== for CSS
+autocmd BufNewFile,BufRead *.css set expandtab
+autocmd BufNewFile,BufRead *.css set tabstop=2
+autocmd BufNewFile,BufRead *.css set shiftwidth=2
+autocmd BufNewFile,BufRead *.css set softtabstop=2
+
 " ===== for Stylus
 autocmd BufNewFile,BufRead *.styl set expandtab
 autocmd BufNewFile,BufRead *.styl set tabstop=2
