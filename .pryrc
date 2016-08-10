@@ -7,6 +7,7 @@ Pry.config.commands.alias_command 's', 'step' rescue nil
 Pry.config.commands.alias_command 'n', 'next' rescue nil
 Pry.config.commands.alias_command 'r!', 'reload!' rescue nil
 Pry.config.commands.alias_command "e", "exit"
+Pry.config.commands.alias_command "x", "exit"
 Pry.config.commands.alias_command "em", "edit-method"
 Pry.config.commands.alias_command "ss", "show-source"
 
