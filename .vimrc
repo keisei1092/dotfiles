@@ -336,6 +336,12 @@ autocmd BufNewFile,BufRead *.erb set tabstop=2
 autocmd BufNewFile,BufRead *.erb set shiftwidth=2
 autocmd BufNewFile,BufRead *.erb set softtabstop=2
 
+" ===== for Jade
+autocmd BufNewFile,BufRead *.jade set expandtab
+autocmd BufNewFile,BufRead *.jade set tabstop=2
+autocmd BufNewFile,BufRead *.jade set shiftwidth=2
+autocmd BufNewFile,BufRead *.jade set softtabstop=2
+
 " ===== for JSON
 autocmd BufNewFile,BufRead *.json set expandtab
 autocmd BufNewFile,BufRead *.json set tabstop=2
