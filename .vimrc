@@ -61,6 +61,7 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'digitaltoad/vim-pug'
 
 call neobundle#end()
 
