@@ -138,10 +138,14 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+" ==========================================================
+" 高速化のためにシンタックスハイライトに生け贄になってもらう
+" ==========================================================
+syntax off
+
 " =========
 " operation
 " =========
-syntax on
 set clipboard+=unnamed
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
