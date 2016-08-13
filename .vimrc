@@ -190,20 +190,6 @@ set ttymouse=xterm2
 noremap zl zL
 noremap zh zH
 
-" ===== 矢印キーをもっと便利な何かにマッピングしたらいいんじゃないかな
-noremap <Up> :VimFiler<CR>
-inoremap <Up> <ESC>:VimFiler<CR>
-vnoremap <Up> <ESC>:VimFiler<CR>
-noremap <Down> :split<CR>
-inoremap <Down> <ESC>:split<CR>
-vnoremap <Down> <ESC>:split<CR>
-noremap <Left> <C-z>
-inoremap <Left> <ESC><C-z>
-vnoremap <Left> <ESC><C-z>
-noremap <Right> :vsplit<CR>
-inoremap <Right> <ESC>:vsplit<CR>
-vnoremap <Right> <ESC>:vsplit<CR>
-
 " ===== 保存とか終了とかエイリアス張る
 nnoremap zq :q!<CR>
 nnoremap zp :q!<CR> " だいぶゴリ押しだがホームポジションが崩れないので設定してみる
