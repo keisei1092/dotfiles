@@ -383,6 +383,8 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,son :<C-u>syntax on<CR>
+nnoremap <silent> ,sof :<C-u>syntax off<CR>
 nnoremap <silent> ,e :<C-u>VimFiler <CR>
 command E VimFiler
 nnoremap <silent> <C-n><C-e> :VimFiler<CR>
