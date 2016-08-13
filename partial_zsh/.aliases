@@ -14,11 +14,14 @@ alias checkoutpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{
 alias push="git push origin"
 alias pushm="git push origin master"
 alias gd="git diff"
-alias gg="git grep"
+alias gg="echo '¶ (⁄• ˅̮• ∖)⁋ Vimの:Ggrepを使いなさい！' | git grep"
 alias gs="git status"
+alias gst="git stash"
+alias gstp="git stash pop"
 alias stash="git stash"
 alias com="git checkout master"
 alias chm="git checkout master"
+alias checkoutm="git checkout master"
 alias master="git checkout master"
 alias gcom="git checkout master"
 alias gpom="git push origin master"
@@ -34,11 +37,13 @@ alias sl="/usr/local/bin/sl"
 alias gr="grep"
 alias grv="grep -v"
 alias ee="exit"
+alias x="exit"
 alias df="cd ~/Codes/dotfiles"
 alias pw="pwd"
 alias l="ls"
 alias lsa="ls -a"
 alias lsla="ls -la"
+alias lsltr="ls -ltr"
 alias psa="psaux"
 alias psaux="ps aux | grep"
 alias k="kill -9"
@@ -50,24 +55,25 @@ alias myip="ifconfig | grep 192"
 alias v="vim"
 alias v.="vim ."
 alias p="pwd"
+alias q="pwd"
 
-# mac commands
+# ===== mac commands
 case ${OSTYPE} in
-    darwin*)
-        alias pc="pbcopy"
-        alias ctags="`brew --prefix`/bin/ctags"
-        alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
-        alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
-        alias mvim="open -a MacVim"
-        ;;
+  darwin*)
+    alias pc="pbcopy"
+    alias ctags="`brew --prefix`/bin/ctags"
+    alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
+    alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
+    alias mvim="open -a MacVim"
+    ;;
 esac
 
-# vagrant
+# ===== vagrant
 alias vu="vagrant up"
 alias vd="vagrant destroy"
 alias vs="vagrant ssh"
 
-# ruby
+# ===== ruby
 alias rb="ruby"
 alias bi="bundle install"
 alias bivb="bundle install --path='vendor/bundle'"
@@ -77,13 +83,14 @@ alias pr="pry-remote"
 alias powres="powder restart"
 alias pres="powres"
 alias powlog="powder log"
+alias routes="bundle exec rake routes"
 
-# npm
+# ===== npm
 alias ni="npm install"
 alias ns="npm start"
 alias nins="npm install && npm start"
 
-# dotfiles
+# ===== dotfiles
 alias z="vim ~/.zshrc"
 alias zr="vim ~/.zshrc"
 alias vr="vim ~/.vimrc"

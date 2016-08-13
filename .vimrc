@@ -57,6 +57,12 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'yssl/QFEnter'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'digitaltoad/vim-pug'
+
 call neobundle#end()
 
 " ===== unite
@@ -68,12 +74,6 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
-" ファイル非同期検索
-nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
-" ファイル検索（git内）
-nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
-" 最近使ったファイルの一覧とバッファを表示
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " ===== add unite command
 command! O call s:UniteOpen()
@@ -125,6 +125,14 @@ if has("unix")
     set tags+=tags,Gemfile.lock.tags
   endif
 endif
+
+" ===== vim-rspec
+let g:rspec_command = 'Dispatch bundle exec spring rspec {spec}'
+" RSpec.vim mappings
+map ,rt :call RunCurrentSpecFile()<CR>
+map ,rs :call RunNearestSpec()<CR>
+map ,rl :call RunLastSpec()<CR>
+map ,ra :call RunAllSpecs()<CR>
 
 filetype plugin indent on
 
@@ -298,6 +306,12 @@ autocmd BufNewFile,BufRead *.html set tabstop=2
 autocmd BufNewFile,BufRead *.html set shiftwidth=2
 autocmd BufNewFile,BufRead *.html set softtabstop=2
 
+" ===== for CSS
+autocmd BufNewFile,BufRead *.css set expandtab
+autocmd BufNewFile,BufRead *.css set tabstop=2
+autocmd BufNewFile,BufRead *.css set shiftwidth=2
+autocmd BufNewFile,BufRead *.css set softtabstop=2
+
 " ===== for Stylus
 autocmd BufNewFile,BufRead *.styl set expandtab
 autocmd BufNewFile,BufRead *.styl set tabstop=2
@@ -316,7 +330,14 @@ autocmd BufNewFile,BufRead *.erb set tabstop=2
 autocmd BufNewFile,BufRead *.erb set shiftwidth=2
 autocmd BufNewFile,BufRead *.erb set softtabstop=2
 
+" ===== for Jade
+autocmd BufNewFile,BufRead *.jade set expandtab
+autocmd BufNewFile,BufRead *.jade set tabstop=2
+autocmd BufNewFile,BufRead *.jade set shiftwidth=2
+autocmd BufNewFile,BufRead *.jade set softtabstop=2
+
 " ===== for JSON
+autocmd BufNewFile,BufRead *.json set syntax=off
 autocmd BufNewFile,BufRead *.json set expandtab
 autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
@@ -355,12 +376,20 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 "===========
 " Command Shortcuts
 "===========
+nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,e :<C-u>VimFiler <CR>
 command E VimFiler
+nnoremap <silent> <C-n><C-e> :VimFiler<CR>
 command F echo expand('%:p')
+nnoremap <silent> <C-n><C-f> :echo expand('%:p')<CR>
 command M MRU
-command G Ggrep
+nnoremap <silent> <C-n><C-m> :MRU<CR>
 command SP set paste
 command SW set wrap
+command HB call HtmlBeautify()
+nnoremap <silent> <C-n><C-o><C-h> :noh<CR>
 
 " ===== open VimFIler if no argument passed
 " autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
@@ -373,4 +402,4 @@ function! s:GetBufByte()
     endif
 endfunction
 
-source /Users/keisei/Codes/dotfiles/.vimrc-private
+source ~/Codes/dotfiles/.vimrc-private
