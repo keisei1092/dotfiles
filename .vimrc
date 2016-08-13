@@ -74,12 +74,6 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
-" ファイル非同期検索
-nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
-" ファイル検索（git内）
-nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
-" 最近使ったファイルの一覧とバッファを表示
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " ===== add unite command
 command! O call s:UniteOpen()
@@ -343,6 +337,7 @@ autocmd BufNewFile,BufRead *.jade set shiftwidth=2
 autocmd BufNewFile,BufRead *.jade set softtabstop=2
 
 " ===== for JSON
+autocmd BufNewFile,BufRead *.json set syntax=off
 autocmd BufNewFile,BufRead *.json set expandtab
 autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
@@ -381,6 +376,10 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 "===========
 " Command Shortcuts
 "===========
+nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,e :<C-u>VimFiler <CR>
 command E VimFiler
 nnoremap <silent> <C-n><C-e> :VimFiler<CR>
 command F echo expand('%:p')
