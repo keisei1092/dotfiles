@@ -20,6 +20,9 @@ printf "\n\
 # if you want to remove old config files, do this: # \n\
 #                                                  # \n\
 #                 \`findrm \\*_old\`               # \n\
+#                                                  # \n\
+#  (For Linux users: simply hit this:              # \n\
+#    find . -maxdepth 1 -name '*_old' | xargs rm   # \n\
 #################################################### "
 
 source ~/.zshrc
