@@ -339,6 +339,12 @@ autocmd BufNewFile,BufRead *.js set tabstop=2
 autocmd BufNewFile,BufRead *.js set shiftwidth=2
 autocmd BufNewFile,BufRead *.js set softtabstop=2
 
+" ===== for JSX
+autocmd BufNewFile,BufRead *.jsx set expandtab
+autocmd BufNewFile,BufRead *.jsx set tabstop=2
+autocmd BufNewFile,BufRead *.jsx set shiftwidth=2
+autocmd BufNewFile,BufRead *.jsx set softtabstop=2
+
 " ===== for Yaml
 autocmd BufNewFile,BufRead *.yml set expandtab
 autocmd BufNewFile,BufRead *.yml set tabstop=2
