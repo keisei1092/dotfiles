@@ -90,6 +90,7 @@ alias routes="bundle exec rake routes"
 alias ni="npm install"
 alias ns="npm start"
 alias nins="npm install && npm start"
+alias gulp="gulp --require coffee-script"
 
 # ===== dotfiles
 alias z="vim ~/.zshrc"
