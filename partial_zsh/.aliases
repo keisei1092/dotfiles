@@ -12,6 +12,7 @@ alias copeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print 
 alias checkout="git checkout"
 alias checkoutpeco='git checkout `git branch | peco | sed -e "s/\* //g" | awk "{print \$1}"`'
 alias push="git push origin `git rev-parse --abbrev-ref HEAD`"
+alias gps="git push origin `git rev-parse --abbrev-ref HEAD`"
 alias pushm="git push origin master"
 alias gd="git diff"
 alias gg="echo '¶ (⁄• ˅̮• ∖)⁋ Vimの:Ggrepを使いなさい！' | git grep"
@@ -27,6 +28,7 @@ alias gcom="git checkout master"
 alias gpom="git push origin master"
 alias gphm="git push heroku master"
 alias pull="git pull"
+alias gpl="git pull"
 alias gr="git reset"
 alias t="tig"
 
