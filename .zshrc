@@ -19,6 +19,9 @@ GREP_OPTIONS="--color=always"; export GREP_OPTIONS
 export TREE='-C'
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+if [ -d "$HOME/node_modules" ]; then
+  export PATH=$PATH:$HOME/node_modules/.bin
+fi
 
 source ~/Codes/dotfiles/partial_zsh/.aliases
 source ~/Codes/dotfiles/partial_zsh/.peco-select-history
