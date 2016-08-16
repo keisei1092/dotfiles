@@ -60,6 +60,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'digitaltoad/vim-pug'
 
 call neobundle#end()
@@ -73,12 +74,6 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
-" ファイル非同期検索
-nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
-" ファイル検索（git内）
-nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
-" 最近使ったファイルの一覧とバッファを表示
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " ===== add unite command
 command! O call s:UniteOpen()
@@ -143,10 +138,14 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+" ==========================================================
+" 高速化のためにシンタックスハイライトに生け贄になってもらう
+" ==========================================================
+syntax off
+
 " =========
 " operation
 " =========
-syntax on
 set clipboard+=unnamed
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
@@ -190,20 +189,6 @@ set ttymouse=xterm2
 " ===== zl => zL
 noremap zl zL
 noremap zh zH
-
-" ===== 矢印キーをもっと便利な何かにマッピングしたらいいんじゃないかな
-noremap <Up> :VimFiler<CR>
-inoremap <Up> <ESC>:VimFiler<CR>
-vnoremap <Up> <ESC>:VimFiler<CR>
-noremap <Down> :split<CR>
-inoremap <Down> <ESC>:split<CR>
-vnoremap <Down> <ESC>:split<CR>
-noremap <Left> <C-z>
-inoremap <Left> <ESC><C-z>
-vnoremap <Left> <ESC><C-z>
-noremap <Right> :vsplit<CR>
-inoremap <Right> <ESC>:vsplit<CR>
-vnoremap <Right> <ESC>:vsplit<CR>
 
 " ===== 保存とか終了とかエイリアス張る
 nnoremap zq :q!<CR>
@@ -311,6 +296,12 @@ autocmd BufNewFile,BufRead *.html set tabstop=2
 autocmd BufNewFile,BufRead *.html set shiftwidth=2
 autocmd BufNewFile,BufRead *.html set softtabstop=2
 
+" ===== for CSS
+autocmd BufNewFile,BufRead *.css set expandtab
+autocmd BufNewFile,BufRead *.css set tabstop=2
+autocmd BufNewFile,BufRead *.css set shiftwidth=2
+autocmd BufNewFile,BufRead *.css set softtabstop=2
+
 " ===== for Stylus
 autocmd BufNewFile,BufRead *.styl set expandtab
 autocmd BufNewFile,BufRead *.styl set tabstop=2
@@ -329,7 +320,14 @@ autocmd BufNewFile,BufRead *.erb set tabstop=2
 autocmd BufNewFile,BufRead *.erb set shiftwidth=2
 autocmd BufNewFile,BufRead *.erb set softtabstop=2
 
+" ===== for Jade
+autocmd BufNewFile,BufRead *.jade set expandtab
+autocmd BufNewFile,BufRead *.jade set tabstop=2
+autocmd BufNewFile,BufRead *.jade set shiftwidth=2
+autocmd BufNewFile,BufRead *.jade set softtabstop=2
+
 " ===== for JSON
+autocmd BufNewFile,BufRead *.json set syntax=off
 autocmd BufNewFile,BufRead *.json set expandtab
 autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
@@ -340,6 +338,12 @@ autocmd BufNewFile,BufRead *.js set expandtab
 autocmd BufNewFile,BufRead *.js set tabstop=2
 autocmd BufNewFile,BufRead *.js set shiftwidth=2
 autocmd BufNewFile,BufRead *.js set softtabstop=2
+
+" ===== for JSX
+autocmd BufNewFile,BufRead *.jsx set expandtab
+autocmd BufNewFile,BufRead *.jsx set tabstop=2
+autocmd BufNewFile,BufRead *.jsx set shiftwidth=2
+autocmd BufNewFile,BufRead *.jsx set softtabstop=2
 
 " ===== for Yaml
 autocmd BufNewFile,BufRead *.yml set expandtab
@@ -368,6 +372,12 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 "===========
 " Command Shortcuts
 "===========
+nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,son :<C-u>syntax on<CR>
+nnoremap <silent> ,sof :<C-u>syntax off<CR>
+nnoremap <silent> ,e :<C-u>VimFiler <CR>
 command E VimFiler
 nnoremap <silent> <C-n><C-e> :VimFiler<CR>
 command F echo expand('%:p')
