@@ -252,7 +252,7 @@ set relativenumber
 set ruler " the ruler is displayed on the right side of the status line
 set cursorline
 " colorscheme molokai
-set background=dark
+set background=light
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue
 match ZenkakuSpace /　/
 
