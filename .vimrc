@@ -381,6 +381,7 @@ nnoremap <silent> ,gl  :<C-u>Glog<CR>
 nnoremap <silent> ,gb  :<C-u>Gblame<CR>
 nnoremap <silent> ,son :<C-u>syntax on<CR>
 nnoremap <silent> ,sof :<C-u>syntax off<CR>
+nnoremap <silent> ,rn :<C-u>set relativenumber<CR>
 nnoremap <silent> ,e   :<C-u>VimFiler <CR>
 nnoremap <silent> ,m   :<C-u>MRU <CR>
 command E VimFiler
