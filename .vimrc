@@ -62,6 +62,7 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'tacroe/unite-mark'
 
 call neobundle#end()
 
