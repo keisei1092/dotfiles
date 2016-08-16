@@ -62,6 +62,7 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'tacroe/unite-mark'
 
 call neobundle#end()
 
@@ -374,10 +375,16 @@ autocmd BufNewFile,BufRead .gitconfig set softtabstop=4
 "===========
 nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,ug  :<C-u>Unite file_rec/git<CR>
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,uu  :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,gd  :<C-u>Gdiff<CR>
+nnoremap <silent> ,gs  :<C-u>Gstatus<CR>
+nnoremap <silent> ,gl  :<C-u>Glog<CR>
+nnoremap <silent> ,gb  :<C-u>Gblame<CR>
 nnoremap <silent> ,son :<C-u>syntax on<CR>
 nnoremap <silent> ,sof :<C-u>syntax off<CR>
-nnoremap <silent> ,e :<C-u>VimFiler <CR>
+nnoremap <silent> ,rn :<C-u>set relativenumber<CR>
+nnoremap <silent> ,e   :<C-u>VimFiler <CR>
+nnoremap <silent> ,m   :<C-u>MRU <CR>
 command E VimFiler
 nnoremap <silent> <C-n><C-e> :VimFiler<CR>
 command F echo expand('%:p')
