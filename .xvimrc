@@ -215,9 +215,6 @@ set incsearch
 set ignorecase
 set smartcase " if a pattern contains an uppercase the search will be case sensitive
 
-" ===== パターン検索のエスケープを必要なくする
-nnoremap / /\v
-
 " ===== auto complete
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
