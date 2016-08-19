@@ -66,6 +66,7 @@ case ${OSTYPE} in
     alias ls='/usr/local/bin/gls -F --group-directories-first --color=auto' # color=auto
     alias lsltr='/usr/local/bin/gls -Fltr --group-directories-first --color=auto' # color=auto
     alias mvim="open -a MacVim"
+    alias xvr="vim ~/.xvimrc"
     ;;
 esac
 
