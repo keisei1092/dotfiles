@@ -19,20 +19,3 @@ sudo apt-get install -y ibus-mozc mozc-server mozc-utils-gui
 
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-
-echo 'export PATH="~/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-
-source ~/.bashrc
-
-rbenv install 2.3.1
-rbenv global 2.3.1
-
-# dotfiles =====
-
-git clone https://github.com/keisei1092/dotfiles.git
-
-cd dotfiles
-./setup.sh
-
-cd ~
