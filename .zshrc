@@ -8,6 +8,7 @@ fi
 
 # ===== Customize to your needs...
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH:$PATH
+export PATH="/Users/keisei/.cask/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 PATH=$PATH:~/local/bin
 export PYENV_ROOT=/usr/local/var/pyenv
