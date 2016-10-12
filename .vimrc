@@ -24,7 +24,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
-" NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
@@ -137,12 +137,15 @@ map ,ra :call RunAllSpecs()<CR>
 
 filetype plugin indent on
 
+syntax enable
+
 NeoBundleCheck
 
 " ==========================================================
 " 高速化のためにシンタックスハイライトに生け贄になってもらう
 " ==========================================================
-syntax off
+" syntax off
+syntax on
 
 " =========
 " operation
@@ -252,8 +255,12 @@ augroup END
 set relativenumber
 set ruler " the ruler is displayed on the right side of the status line
 set cursorline
-" colorscheme molokai
-set background=dark
+set background=light
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue
 match ZenkakuSpace /　/
 
@@ -357,6 +364,12 @@ autocmd BufNewFile,BufRead *.coffee set expandtab
 autocmd BufNewFile,BufRead *.coffee set tabstop=2
 autocmd BufNewFile,BufRead *.coffee set shiftwidth=2
 autocmd BufNewFile,BufRead *.coffee set softtabstop=2
+
+" ===== for Swift
+autocmd BufNewFile,BufRead *.swift set expandtab
+autocmd BufNewFile,BufRead *.swift set tabstop=4
+autocmd BufNewFile,BufRead *.swift set shiftwidth=4
+autocmd BufNewFile,BufRead *.swift set softtabstop=4
 
 " ===== for .vimrc
 autocmd BufNewFile,BufRead .vimrc set expandtab
