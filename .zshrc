@@ -66,3 +66,4 @@ function findrm() {
   find . -maxdepth 1 -name $1 | xargs rm
 }
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
