@@ -1,10 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-#	name = kp
-#	email = keisei@cps.im.dendai.ac.jp
 [core]
-	editor = vim
+	editor = emacs
 	excludesfile = /Users/keisei/.gitignore_global
 	excludesfile = /Users/keisei/.gitignore
 [user]

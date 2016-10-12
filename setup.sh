@@ -23,6 +23,10 @@ printf "\n\
 #                                                  # \n\
 #  (For Linux users: simply hit this:              # \n\
 #    find . -maxdepth 1 -name '*_old' | xargs rm   # \n\
+#  (Emacs configuration file 'init.el'             # \n\
+#   isn't linked by this command. Please hit this: # \n\
+#    cp init.el ~/.emacs.d/init.el                 # \n\
+#    (Please check '~/.emacs.d' created)           # \n\
 #################################################### "
 
 source ~/.zshrc
