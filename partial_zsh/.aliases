@@ -31,6 +31,8 @@ alias gr="git reset"
 alias t="tig"
 
 # ===== unix commands
+alias e="emacs"
+alias ei="emacs ~/.emacs.d/init.el"
 alias k="kill -9"
 alias cl="clear"
 alias sl="/usr/local/bin/sl"
