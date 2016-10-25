@@ -32,7 +32,6 @@ alias t="tig"
 
 # ===== unix commands
 alias e="/usr/local/Cellar/emacs/25.1/bin/emacs"
-alias emacs="ls"
 alias ei="emacs ~/.emacs.d/init.el"
 alias k="kill -9"
 alias cl="clear"
