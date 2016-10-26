@@ -11,6 +11,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH:$PATH
 export PATH="/Users/keisei/.cask/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 PATH=$PATH:~/local/bin
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH=$PATH:~/local/bin
