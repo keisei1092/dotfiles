@@ -255,7 +255,7 @@ augroup END
 set relativenumber
 set ruler " the ruler is displayed on the right side of the status line
 set cursorline
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_visibility = "high"
