@@ -30,8 +30,11 @@
 (global-set-key (kbd "S-C-n") 'shrink-window)
 (global-set-key (kbd "S-C-p") 'enlarge-window)
 (set-default 'truncate-lines t)
-(set-frame-parameter nil 'background-mode 'light)
+(set-frame-parameter nil 'background-mode 'dark)
+(set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
+
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 
 (when (and (>= emacs-major-version 24) (not (null window-system)))
   (let* ((font-family "SF Mono")
