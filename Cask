@@ -32,3 +32,4 @@
 (depends-on "js2-mode")
 (depends-on "web-mode")
 (depends-on "php-mode")
+(depends-on "jade-mode")
