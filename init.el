@@ -35,6 +35,7 @@
 (load-theme 'solarized t)
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.babel\\'" . js2-jsx-mode))
 
 (when (and (>= emacs-major-version 24) (not (null window-system)))
   (let* ((font-family "SF Mono")
