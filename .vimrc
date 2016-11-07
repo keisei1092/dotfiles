@@ -255,12 +255,12 @@ augroup END
 set relativenumber
 set ruler " the ruler is displayed on the right side of the status line
 set cursorline
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
+set background=light
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+colorscheme default
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue
 match ZenkakuSpace /　/
 
