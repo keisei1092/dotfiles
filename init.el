@@ -34,6 +34,7 @@
 (tool-bar-mode -1)
 (show-paren-mode 1)
 (global-hl-line-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
