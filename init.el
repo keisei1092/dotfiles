@@ -11,6 +11,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (global-linum-mode 1)
+(setq inhibit-startup-message t)
 (electric-pair-mode 1)
 (unless window-system
   (require 'mouse)
