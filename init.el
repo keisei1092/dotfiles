@@ -30,6 +30,8 @@
 (global-set-key (kbd "S-C-n") 'shrink-window)
 (global-set-key (kbd "S-C-p") 'enlarge-window)
 (set-default 'truncate-lines t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
