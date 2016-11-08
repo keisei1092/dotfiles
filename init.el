@@ -32,6 +32,7 @@
 (set-default 'truncate-lines t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(global-hl-line-mode t)
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
