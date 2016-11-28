@@ -59,7 +59,6 @@ alias v="vim"
 alias v.="vim ."
 alias p="pwd"
 alias q="pwd"
-alias x="xargs"
 
 # ===== mac commands
 case ${OSTYPE} in
