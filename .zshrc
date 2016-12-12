@@ -68,3 +68,9 @@ function findrm() {
 }
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
