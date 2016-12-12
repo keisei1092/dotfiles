@@ -12,59 +12,51 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs21e,ucs-2
 if &compatible
   set nocompatible " Be iMproved
 endif
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'croaker/mustang-vim'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'vim-scripts/javacomplete'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-" NeoBundle 'alpaca-tc/alpaca_powertabline'
-" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-" NeoBundle 'Lokaltog/powerline-fontpatcher'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'toyamarinyon/vim-swift'
-NeoBundle 'wavded/vim-stylus'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'grep.vim'
-NeoBundle 'yegappan/mru'
-NeoBundle 'ajh17/Spacegray.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'https://github.com/kmnk/vim-unite-giti.git'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'fuenor/qfixgrep'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'yssl/QFEnter'
-NeoBundle 'Chiel92/vim-autoformat'
-NeoBundle 'szw/vim-tags'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'digitaltoad/vim-pug'
-NeoBundle 'tacroe/unite-mark'
+set runtimepath+=~/src/dein/repos/github.com/Shougo/dein.vim
+call dein#begin('~/src/dein')
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('croaker/mustang-vim')
+call dein#add('nanotech/jellybeans.vim')
+call dein#add('tomasr/molokai')
+call dein#add('vim-scripts/javacomplete')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+" call dein#add('alpaca-tc/alpaca_powertabline')
+" call dein#add('Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'})
+" call dein#add('Lokaltog/powerline-fontpatcher')
+call dein#add('mattn/emmet-vim')
+call dein#add('toyamarinyon/vim-swift')
+call dein#add('wavded/vim-stylus')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('scrooloose/syntastic')
+call dein#add('grep.vim')
+call dein#add('yegappan/mru')
+call dein#add('ajh17/Spacegray.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimfiler.vim')
+call dein#add('majutsushi/tagbar')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('tpope/vim-surround')
+call dein#add('https://github.com/kmnk/vim-unite-giti.git')
+call dein#add('slim-template/vim-slim')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('fuenor/qfixgrep')
+call dein#add('tpope/vim-rails')
+call dein#add('yssl/QFEnter')
+call dein#add('Chiel92/vim-autoformat')
+call dein#add('szw/vim-tags')
+call dein#add('maksimr/vim-jsbeautify')
+call dein#add('tpope/vim-dispatch')
+call dein#add('thoughtbot/vim-rspec')
+call dein#add('pangloss/vim-javascript')
+call dein#add('digitaltoad/vim-pug')
+call dein#add('tacroe/unite-mark')
 
-call neobundle#end()
+call dein#end()
 
 " ===== unite
 let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
@@ -136,10 +128,11 @@ map ,rl :call RunLastSpec()<CR>
 map ,ra :call RunAllSpecs()<CR>
 
 filetype plugin indent on
-
 syntax enable
 
-NeoBundleCheck
+if dein#check_install()
+  call dein#install()
+endif
 
 " ==========================================================
 " 高速化のためにシンタックスハイライトに生け贄になってもらう
@@ -255,12 +248,11 @@ augroup END
 set relativenumber
 set ruler " the ruler is displayed on the right side of the status line
 set cursorline
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+colorscheme default
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue
 match ZenkakuSpace /　/
 
@@ -421,3 +413,5 @@ function! s:GetBufByte()
 endfunction
 
 source ~/Codes/dotfiles/.vimrc-private
+
+set background=light

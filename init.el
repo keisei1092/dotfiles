@@ -11,6 +11,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (global-linum-mode 1)
+(setq inhibit-startup-message t)
 (electric-pair-mode 1)
 (unless window-system
   (require 'mouse)
@@ -30,11 +31,18 @@
 (global-set-key (kbd "S-C-n") 'shrink-window)
 (global-set-key (kbd "S-C-p") 'enlarge-window)
 (set-default 'truncate-lines t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(show-paren-mode 1)
+(global-hl-line-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.babel\\'" . js2-jsx-mode))
+(setq ruby-insert-encoding-magic-comment nil)
 
 (when (and (>= emacs-major-version 24) (not (null window-system)))
   (let* ((font-family "SF Mono")

@@ -17,5 +17,6 @@ function gcopeco() { git checkout `git branch | peco | sed -e "s/\* //g" | awk "
 function gp() { echo `git ls-files | peco` }
 function gitbranchp() { echo `git branch | peco` }
 function vg() { vim `git ls-files | peco` }
+function eg() { emacs `git ls-files | peco` }
 function vp() { vim `find . -name "*" | peco` }
 alias vv='vg'
