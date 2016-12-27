@@ -96,6 +96,7 @@ alias routes="bundle exec rake routes"
 
 # ===== npm
 alias ni="npm install"
+alias nis="npm install -S"
 alias ns="npm start"
 alias nins="npm install && npm start"
 
